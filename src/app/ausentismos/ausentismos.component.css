@@ -1,0 +1,49 @@
+h1 {
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+p{
+  font-size: 15px;
+  color: black;
+}
+label {
+  margin-left: 10px
+}
+input {
+  margin-left: 10px;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container>div{
+  display: flex;
+}
+.label {
+  width: 150px;
+}
+.input{
+  display: flex;
+  margin-right: 10px;
+  flex-direction: column;
+}
+.form-container {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.invalid{
+  border: 2px solid red;
+}
