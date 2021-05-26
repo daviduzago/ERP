@@ -14,26 +14,27 @@
   </div>
   <h1>Solicitud</h1>
   <hr>
-  <form [formGroup]="ausentismos" (ngSubmit)="onSubmit()" #localForm="ngForm">
-    <form class="form-group" formGroupName="solicitud">
+  <form class="needs-validation" [formGroup]="ausentismos" (ngSubmit)="validate($event)" #localForm="ngForm">
+    <form  formGroupName="solicitud">
       <div class="form-container">
         <div class="label">Numero:</div>
         <div class="input">
-          <input class="invalid" style="width: 150px" type="text" formControlName="numero" [class.invalid]="localForm.submitted && ausentismos.get('numero')?.invalid">
+          <!--<input class="invalid" style="width: 150px" type="text" formControlName="numero" [class.invalid]="localForm.submitted && ausentismos.get('numero')?.invalid">-->
+          <input class="form-control" style="width: 150px" type="text" formControlName="numero" required>
+          <div style="margin-left: 10px" class="invalid-feedback">Debe ingresar un numero</div>
         </div>
         <div class="label">Fecha:</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="fecha"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="fecha" required></div>
       </div>
       <div class="form-container">
         <div class="label">Empleado</div>
-        <div class="input"><input style="width: 450px" type="text" formControlName="empleado"></div>
+        <div class="input"><input class="form-control" style="width: 450px" type="text" formControlName="empleado" required></div>
         <div class="label">Vinculacion</div>
-        <div class="input"><input style="width: 300px" type="text" formControlName="vinculacion"></div>
+        <div class="input"><input class="form-control" style="width: 300px" type="text" formControlName="vinculacion" required></div>
       </div>
       <div class="form-container">
         <div style="width: 160px">Descripcion</div>
-        <div class="label"><textarea name="descripcion" id="descripcion" cols="105" rows="2"
-                                     formControlName="descripcion">
+        <div class="label"><textarea style="width: 910px" class="form-control" name="descripcion" id="descripcion" formControlName="descripcion" required>
           </textarea></div>
       </div>
     </form>
@@ -43,30 +44,30 @@
     <form formGroupName="autorizacion">
       <div class="form-container">
         <div class="label">Fecha</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="fecha"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="fecha" required></div>
         <div class="label">Funcionario</div>
-        <div class="input"><input style="width: 600px" type="text" formControlName="funcionario"></div>
+        <div class="input"><input class="form-control" style="width: 600px" type="text" formControlName="funcionario" required></div>
       </div>
       <hr>
       <div class="form-container">
         <div style="width: 160px">Motivo</div>
         <div class="input">
-          <select style="width: 900px" name="motivo" formControlName="motivo">
+          <select class="form-control" style="width: 900px" name="motivo" formControlName="motivo" required>
             <option value="Incapacidad por enfermedad profesional">Incapacidad por enfermedad profesional</option>
             <option value="Incapacidad por accidente de trabajo">Incapacidad por accidente de trabajo</option>
             <option value="Prórroga incapacidad por enfermedad">Prórroga incapacidad por enfermedad</option>
           </select>
         </div>
-        <input class="form-check-input" type="checkbox" checked formControlName="remunerado">
+        <input class="form-check-input" type="checkbox" checked formControlName="remunerado" required>
         <label class="form-check-label">Remunerado</label>
       </div>
       <div class="form-container">
         <div class="label">Diagnostico</div>
-        <div class="input"><input style="width: 1040px" type="text" formControlName="diagnostico"></div>
+        <div class="input"><input class="form-control" style="width: 1000px" type="text" formControlName="diagnostico" required></div>
       </div>
       <div class="form-container">
         <div class="label">Concepto</div>
-        <div class="input"><input style="width: 1000px" type="text" formControlName="concepto"></div>
+        <div class="input"><input class="form-control" style="width: 1000px" type="text" formControlName="concepto" required></div>
       </div>
     </form>
     <hr>
@@ -75,33 +76,33 @@
     <form formGroupName="rangoFechas">
       <div class="form-container">
         <div class="label">Inicial</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="inicial"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="inicial" required></div>
         <div class="label">Hora Inicial/24H:</div>
-        <div class="input"><input style="width: 35px" type="text" placeholder="HH" formControlName="horaInicialHH">
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="HH" formControlName="horaInicialHH" required>
         </div>
         :
-        <div class="input"><input style="width: 40px" type="text" placeholder="MM" formControlName="horaInicialMM">
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="MM" formControlName="horaInicialMM" required>
         </div>
         <div class="label">Final:</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="final"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="final" required></div>
         <div class="label">Hora Final/24H:</div>
-        <div class="input"><input style="width: 35px" type="text" placeholder="HH" formControlName="horaFinalHH"></div>
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="HH" formControlName="horaFinalHH" required></div>
         :
-        <div class="input"><input style="width: 40px" type="text" placeholder="MM" formControlName="horaFinalMM"></div>
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="MM" formControlName="horaFinalMM" required></div>
       </div>
       <div class="form-container">
         <div class="label">Dias</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="dias"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="dias" required></div>
         <div class="label">Horas/24H:</div>
-        <div class="input"><input style="width: 35px" type="text" placeholder="HH" formControlName="horasHH"></div>
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="HH" formControlName="horasHH" required></div>
         :
-        <div class="input"><input style="width: 40px" type="text" placeholder="MM" formControlName="horasMM"></div>
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="MM" formControlName="horasMM" required></div>
         <div class="label">Dias reales:</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="diasReales"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="diasReales" required></div>
         <div class="label">Horas reales/24H:</div>
-        <div class="input"><input style="width: 35px" type="text" placeholder="HH" formControlName="horasRealHH"></div>
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="HH" formControlName="horasRealHH" required></div>
         :
-        <div class="input"><input style="width: 40px" type="text" placeholder="MM" formControlName="horasRealMM"></div>
+        <div class="input"><input class="form-control" style="width: 55px" type="text" placeholder="MM" formControlName="horasRealMM" required></div>
       </div>
     </form>
     <hr>
@@ -110,39 +111,38 @@
     <form formGroupName="afectacion">
       <div class="form-container">
         <div class="label">Sustitucion Patronal</div>
-        <div style="width: 120px"><input class="form-check-input" type="checkbox" checked
-                                         formControlName="sustitucionPatronal"></div>
+        <div style="width: 120px"><input class="form-check-input" type="checkbox" checked formControlName="sustitucionPatronal" required></div>
         <div class="label">Aplicacion</div>
-        <div class="input"><input style="width: 130px" type="date" formControlName="aplicacion"></div>
+        <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="aplicacion" required></div>
       </div>
       <div class="form-container">
         <div class="label">Documento Externo</div>
         <div class="input">
-          <select style="width: 100px" name="docExterno1" formControlName="docExterno1">
-            <option selected="selected" value="FP">FP</option>
+          <select class="form-control" style="width: 100px" name="docExterno1" formControlName="docExterno1" required>
+            <option value="FP">FP</option>
             <option value="PP">PP</option>
             <option value="JP">JP</option>
           </select>
         </div>
-        <input type="text" style="width: 150px" formControlName="docExterno2">
-        <input style="width: 130px; margin-right: 10px" type="date" formControlName="docExternoFecha">
+        <input class="form-control" type="text" style="width: 150px" formControlName="docExterno2" required>
+        <input class="form-control" style="width: 130px; margin-right: 10px" type="date" formControlName="docExternoFecha" required>
         <div class="label">Documento Administrativo</div>
         <div class="input">
-          <select style="width: 100px" name="docAdmin1" formControlName="docAdmin1">
-            <option selected="selected" value="FP">FP</option>
+          <select class="form-control" style="width: 100px" name="docAdmin1" formControlName="docAdmin1" required>
+            <option value="FP">FP</option>
             <option value="PP">PP</option>
             <option value="JP">JP</option>
           </select>
         </div>
-        <input type="text" style="width: 150px" formControlName="docAdmin2">
-        <input style="width: 130px" type="date" formControlName="docAdminFecha">
+        <input class="form-control" type="text" style="width: 150px" formControlName="docAdmin2" required>
+        <input class="form-control" style="width: 130px" type="date" formControlName="docAdminFecha" required>
       </div>
     </form>
     <hr>
     <div class="buttons">
       <button class="btn btn-danger m-1">Regresar</button>
-      <button class="btn btn-success m-1" type="submit" [disabled]="!ausentismos.valid">Guardar</button>
-      <!--<button class="btn btn-success m-1" type="submit">Guardar</button>-->
+      <!--<button class="btn btn-success m-1" type="submit" [disabled]="!ausentismos.valid">Guardar</button>-->
+      <button class="btn btn-success m-1" type="submit">Guardar</button>
     </div>
   </form>
   <div style="display: flex; flex-direction: column">

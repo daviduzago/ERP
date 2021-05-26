@@ -48,7 +48,7 @@ export class AusentismosComponent implements OnInit {
       docAdmin2: ['', Validators.required],
       docAdminFecha: ['', Validators.required],
     })
-  })
+  }, {updateOn: 'submit'})
 
   constructor( private fb: FormBuilder) {
   }
@@ -56,8 +56,13 @@ export class AusentismosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    console.warn(this.ausentismos.value)
+  validate(event: Event){
+    let form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (!form.checkValidity() && this.ausentismos.invalid) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
   }
 
 }
