@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder} from "@angular/forms";
 import {Validators} from "@angular/forms";
 
+import Swal from "sweetalert2";
+
 @Component({
   selector: 'app-ausentismos',
   templateUrl: './ausentismos.component.html',
@@ -63,6 +65,17 @@ export class AusentismosComponent implements OnInit {
       event.stopPropagation();
     }
     form.classList.add('was-validated');
+  }
+
+  cerrar() {
+    Swal.fire({
+      title: 'Desea salir sin guardar los cambios?',
+      showDenyButton: true,
+      confirmButtonText: `Si`,
+      denyButtonText: `No`,
+    }).then((result) => {
+      console.log("Funciona")
+    });
   }
 
 }

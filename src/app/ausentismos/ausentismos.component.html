@@ -22,6 +22,7 @@
           <!--<input class="invalid" style="width: 150px" type="text" formControlName="numero" [class.invalid]="localForm.submitted && ausentismos.get('numero')?.invalid">-->
           <input class="form-control" style="width: 150px" type="text" formControlName="numero" required>
           <div style="margin-left: 10px" class="invalid-feedback">Debe ingresar un numero</div>
+          <div style="margin-left: 10px" class="valid-feedback">El numero es correcto</div>
         </div>
         <div class="label">Fecha:</div>
         <div class="input"><input class="form-control" style="width: 130px" type="date" formControlName="fecha" required></div>
